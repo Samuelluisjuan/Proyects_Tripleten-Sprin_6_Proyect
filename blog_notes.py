@@ -10,7 +10,8 @@ from scipy.stats import ttest_ind
 # Lee los dataframes e imprime su informacion
 df_game = pd.read_csv('games.csv')
 display(df_game.head(20))
-print('_____________________________________________________')
+
+#Imprime la informacion de df_games
 display(df_game.info())
 
 
@@ -242,7 +243,7 @@ calificasion_XOne
 calificasion_PC
 
 # Este codigo realiza la prueva de hipotesis
-alpha = 0.5
+alpha = .05
 stat, p_value = ttest_ind(
     calificasion_XOne,
     calificasion_PC
@@ -268,7 +269,7 @@ genre_Sport = df_game[df_game['genre'] == 'Sports']['user_score'].dropna()
 genre_Action = df_game[df_game['genre'] == 'Action']['user_score'].dropna()
 
 # Este codigo realiza la prueva de hipotesis
-alpha = 0.5
+alpha = .05
 stat, p_value = ttest_ind(
     genre_Sport,
     genre_Action
